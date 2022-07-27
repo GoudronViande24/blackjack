@@ -97,6 +97,22 @@ async function startGame() {
 	update();
 
 	let playerIsPlaying = true;
+
+	// Check for blackjack
+	if (getTotal("player") === 21) {
+		bankCards.push(randomCard());
+		update();
+
+		if (getTotal("bank") === 21) {
+			error("You lost.");
+		} else {
+			balance += bet * 4;
+			error("BLACKJACK!");
+		}
+
+		return resetGame();
+	}
+
 	while (playerIsPlaying) {
 		const action = await playerAction();
 
