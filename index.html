@@ -12,8 +12,8 @@
 	<link rel="stylesheet" href="./style.css">
 </head>
 
-<body class="text-center vh-100">
-	<div class="text-center py-3 bg-primary container-fluid position-fixed top-0 start-0 end-0" id="title-bar">
+<body class="text-center vh-100 d-flex flex-column align">
+	<div class="text-center py-3 bg-primary container-fluid position-relative" id="title-bar">
 		<h1 id="title">Blackjack</h1>
 		<div id="fullscreen" class="p-3 fs-4 position-absolute top-0 end-0 h-100 d-flex align-items-center">
 			<i class="bi bi-fullscreen"></i>
@@ -41,21 +41,23 @@
 		</section>
 	</main>
 
-	<footer class="bg-primary p-3 text-light position-fixed bottom-0 start-0 end-0">
+	<footer class="bg-primary p-3 text-light">
 		<div id="controls" class="container">
-			<div class="btn-group">
-				<button id="bet-10" class="btn btn-primary">$10</button>
-				<button id="bet-20" class="btn btn-primary">$20</button>
-				<button id="bet-50" class="btn btn-primary">$50</button>
-				<button id="bet-100" class="btn btn-primary">$100</button>
+			<div id="controls-betting">
+				<div class="btn-group">
+					<button id="bet-10" class="btn btn-primary">$10</button>
+					<button id="bet-20" class="btn btn-primary">$20</button>
+					<button id="bet-50" class="btn btn-primary">$50</button>
+					<button id="bet-100" class="btn btn-primary">$100</button>
+				</div>
+
+				<div class="btn-group">
+					<button id="bet" class="btn btn-success"><i class="bi bi-coin me-1"></i> Bet</button>
+					<button id="reset" class="btn btn-danger"><i class="bi bi-arrow-clockwise me-1"></i> Reset</button>
+				</div>
 			</div>
 
-			<div class="btn-group">
-				<button id="bet" class="btn btn-success"><i class="bi bi-coin me-1"></i> Bet</button>
-				<button id="reset" class="btn btn-danger"><i class="bi bi-arrow-clockwise me-1"></i> Reset</button>
-			</div>
-
-			<div class="btn-group">
+			<div id="controls-playing" class="btn-group" style="display: none;">
 				<button id="hit" class="btn btn-secondary"><i class="bi bi-plus-lg me-1"></i> Hit</button>
 				<button id="stay" class="btn btn-secondary"><i class="bi bi-stop-fill me-1"></i> Stay</button>
 				<button id="double" class="btn btn-secondary"><i class="bi bi-coin me-1"></i> Double</button>

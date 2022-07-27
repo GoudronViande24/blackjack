@@ -39,7 +39,9 @@ const elements = {};
 	"player-cards",
 	"player-total",
 	"player-bet",
-	"player-balance"
+	"player-balance",
+	"controls-playing",
+	"controls-betting"
 ].forEach(id => elements[id] = document.getElementById(id));
 
 // Reset bet button
@@ -89,6 +91,14 @@ function update() {
 
 	for (const card of playerCards) {
 		elements["player-cards"].appendChild(createCard(card));
+	}
+
+	if (playing) {
+		elements["controls-playing"].style.display = "";
+		elements["controls-betting"].style.display = "none";
+	} else {
+		elements["controls-playing"].style.display = "none";
+		elements["controls-betting"].style.display = "";
 	}
 }
 
@@ -216,8 +226,8 @@ function resetGame() {
 	playerCards.length = 0;
 	bankCards.push(randomCard());
 	playerCards.push(randomCard());
-	update();
 	playing = false;
+	update();
 }
 
 resetGame();
