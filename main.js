@@ -1,5 +1,6 @@
 import { createCard, randomCard } from "./card.js";
 import error from "./error.js";
+import "./fullscreen.js";
 
 let balance = 500;
 let bet = 0;
