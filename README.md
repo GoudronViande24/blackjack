@@ -1,2 +1,6 @@
-# blackjack
- HTML5 Blackjack game
+# Blackjack
+HTML5 Blackjack game
+
+## Screenshot
+
+![](cover.webp)
